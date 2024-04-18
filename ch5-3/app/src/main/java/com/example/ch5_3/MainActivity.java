@@ -2,6 +2,7 @@ package com.example.ch5_3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TextView txvOutput = (TextView) findViewById(R.id.txvOutput);
         float size = txvOutput.getTextSize();
         Log.v("SIZE" , "size = " + size);
-        txvOutput.setTextSize(size + 1);
+        txvOutput.setTextSize(px2sp(this, size) + 5);
     }
 
     @Override
@@ -37,5 +38,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TextView txvOutput = (TextView) findViewById(R.id.txvOutput);
         txvOutput.setTextSize(original_size);
         return false;
+    }
+
+    public static  int px2sp(Context context, float pxValue){
+        final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+        return (int) (pxValue / fontScale + 0.5f);
     }
 }
