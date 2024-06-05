@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView txv;
     private String[] tempSet1 = {"冰", "去冰", "溫"};
     private String[] tempSet2 = {"冰", "去冰"};
-
+f
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
